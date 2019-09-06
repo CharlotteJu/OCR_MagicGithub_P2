@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Random;
 
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS_RANDOM;
+import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.generateFakeUsers;
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.generateUsers;
 
 public class FakeApiService implements ApiService {
 
     private List<User> users = generateUsers();
+    private List<User> fakeUsers = generateFakeUsers();
 
     /**
      * Return a list of {@link User}
@@ -26,11 +28,14 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void generateRandomUser() {
-        Random r = new Random();
-        int temp = r.nextInt(FAKE_USERS_RANDOM.size());
-        User user = FAKE_USERS_RANDOM.get(temp);
-        users.add(user);
-        FAKE_USERS_RANDOM.remove(user);
+
+        if(fakeUsers.size() >0) {
+            Random r = new Random();
+            int temp = r.nextInt(fakeUsers.size());
+            User user = fakeUsers.get(temp);
+            users.add(user);
+            fakeUsers.remove(user);
+        }
     }
 
     /**
