@@ -30,6 +30,7 @@ public class FakeApiService implements ApiService {
         int temp = r.nextInt(FAKE_USERS_RANDOM.size());
         User user = FAKE_USERS_RANDOM.get(temp);
         users.add(user);
+        FAKE_USERS_RANDOM.remove(user);
     }
 
     /**
