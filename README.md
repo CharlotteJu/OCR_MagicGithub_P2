@@ -1,3 +1,8 @@
+## Compétences utilisées 
+
+- TDD
+
+
 # Parcours Android - OpenClassrooms
 
 Ce dépôt contient toutes les mini-applications **terminées** des cours du [parcours Android](https://openclassrooms.com/paths/developpeur-se-d-applications-android) diplômant d'OpenClassrooms.
